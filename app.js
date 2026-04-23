@@ -110,6 +110,9 @@ app.use("/",userRouter)
 //   const allListings= await Listing.find({});
 // res.render("listings/index",{allListings});
 // })
+app.get("/",(req,res)=>{
+   res.redirect("/listings");
+})
 
 app.use((req,res,next)=>{
   next(new ExpressError(404,"Page Not Found!"));
